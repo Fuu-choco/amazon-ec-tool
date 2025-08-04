@@ -1,0 +1,41 @@
+# Amazon EC Tool Configuration
+# 設定ファイル
+
+amazon:
+  # Amazon API設定
+  access_key_id: ${AWS_ACCESS_KEY_ID}
+  secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+  associate_tag: ${ASSOCIATE_TAG}
+  region: us-east-1
+  marketplace: www.amazon.co.jp
+  host: webservices.amazon.co.jp
+
+google_sheets:
+  # Google Sheets API設定
+  credentials_file: ${GOOGLE_SHEETS_CREDENTIALS_FILE}
+  spreadsheet_id: ${SPREADSHEET_ID}
+
+data_processing:
+  # データ処理設定
+  batch_size: 100
+  retry_attempts: 3
+  retry_delay: 1
+  max_concurrent_requests: 5
+
+scheduling:
+  # スケジューリング設定
+  price_update_interval: 86400  # 24時間
+  stock_update_interval: 3600   # 1時間
+  analysis_interval: 604800     # 1週間
+
+logging:
+  # ログ設定
+  level: INFO
+  file: logs/app.log
+  max_size: 10485760  # 10MB in bytes
+  backup_count: 5
+
+database:
+  # データベース設定
+  type: sqlite
+  path: data/amazon_ec.db 
